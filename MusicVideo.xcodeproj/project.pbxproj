@@ -54,14 +54,46 @@
 		759081B01C70F07900EACEF1 /* MusicVideo */ = {
 			isa = PBXGroup;
 			children = (
-				759081B11C70F07900EACEF1 /* AppDelegate.swift */,
-				759081B31C70F07900EACEF1 /* ViewController.swift */,
-				759081B51C70F07900EACEF1 /* Main.storyboard */,
-				759081B81C70F07900EACEF1 /* Assets.xcassets */,
-				759081BA1C70F07900EACEF1 /* LaunchScreen.storyboard */,
-				759081BD1C70F07900EACEF1 /* Info.plist */,
+				759081C61C70F2BD00EACEF1 /* Supporting Files */,
+				759081C31C70F27F00EACEF1 /* Model */,
+				759081C41C70F28F00EACEF1 /* Controller */,
+				759081C51C70F2A300EACEF1 /* View */,
 			);
 			path = MusicVideo;
+			sourceTree = "<group>";
+		};
+		759081C31C70F27F00EACEF1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		759081C41C70F28F00EACEF1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				759081B31C70F07900EACEF1 /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		759081C51C70F2A300EACEF1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				759081B51C70F07900EACEF1 /* Main.storyboard */,
+				759081BA1C70F07900EACEF1 /* LaunchScreen.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		759081C61C70F2BD00EACEF1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				759081B11C70F07900EACEF1 /* AppDelegate.swift */,
+				759081B81C70F07900EACEF1 /* Assets.xcassets */,
+				759081BD1C70F07900EACEF1 /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
