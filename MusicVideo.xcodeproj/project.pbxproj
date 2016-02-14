@@ -15,6 +15,7 @@
 		759081C81C70F67D00EACEF1 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759081C71C70F67D00EACEF1 /* APIManager.swift */; };
 		759081CB1C710FF800EACEF1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759081CA1C710FF800EACEF1 /* Constants.swift */; };
 		759081CD1C71111000EACEF1 /* MusicVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759081CC1C71111000EACEF1 /* MusicVideo.swift */; };
+		759081CF1C7127B800EACEF1 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759081CE1C7127B800EACEF1 /* Reachability.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		759081C71C70F67D00EACEF1 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		759081CA1C710FF800EACEF1 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		759081CC1C71111000EACEF1 /* MusicVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicVideo.swift; sourceTree = "<group>"; };
+		759081CE1C7127B800EACEF1 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 		759081C91C710FE600EACEF1 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				759081CE1C7127B800EACEF1 /* Reachability.swift */,
 				759081CA1C710FF800EACEF1 /* Constants.swift */,
 			);
 			name = Utils;
@@ -186,6 +189,7 @@
 			files = (
 				759081C81C70F67D00EACEF1 /* APIManager.swift in Sources */,
 				759081B41C70F07900EACEF1 /* ViewController.swift in Sources */,
+				759081CF1C7127B800EACEF1 /* Reachability.swift in Sources */,
 				759081CD1C71111000EACEF1 /* MusicVideo.swift in Sources */,
 				759081B21C70F07900EACEF1 /* AppDelegate.swift in Sources */,
 				759081CB1C710FF800EACEF1 /* Constants.swift in Sources */,
