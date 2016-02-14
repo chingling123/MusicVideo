@@ -10,7 +10,7 @@ import Foundation
 
 class APIManager {
     
-    func loadData(urlString:String, completion:(result:String) -> Void){
+    func loadData(urlString:String, completion:[Videos] -> Void){
         
         //DISABLE CACHE
         let config = NSURLSessionConfiguration.ephemeralSessionConfiguration()
@@ -23,27 +23,32 @@ class APIManager {
         
         let task = session.dataTaskWithURL(url!) { (data, response, error) -> Void in
             if error != nil{
-                dispatch_async(dispatch_get_main_queue()) {
-                    completion(result: (error!.localizedDescription))
-                }
+                print(error!.localizedDescription)
             }else{
-                print(data)
                 
                 do{
-                    if let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as? JSONDictionary{
-                        print(json)
-                        let priority = DISPATCH_QUEUE_PRIORITY_HIGH
-                        dispatch_async(dispatch_get_global_queue(priority, 0), { () -> Void in
-                            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                                completion(result: "NSURLSession successfull")
+                    if let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as? JSONDictionary,
+                        feed = json["feed"] as? JSONDictionary, entries = feed["entry"] as? JSONArray{
+                            
+                            var videos = [Videos]()
+                            
+                            for entry in entries{
+                                let entry = Videos(data: entry as! JSONDictionary)
+                                videos.append(entry)
+                            }
+                            
+                            
+                            let priority = DISPATCH_QUEUE_PRIORITY_HIGH
+                            dispatch_async(dispatch_get_global_queue(priority, 0), { () -> Void in
+                                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                                    completion(videos)
+                                })
                             })
-                        })
                     }
                 }catch{
-                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                        completion(result: "error in NSJSONSerialization")
-                    })
+                        print("error in NSJSONSerialization")
                 }
+
             }
             
         }

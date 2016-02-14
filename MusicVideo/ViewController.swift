@@ -20,10 +20,15 @@ class ViewController: UIViewController {
         api.loadData("https://itunes.apple.com/us/rss/topmusicvideos/limit=10/json", completion: didLoadData)
     }
     
-    func didLoadData(result:String){
+    func didLoadData(videos:[Videos]){
     
-        print(result)
+        for item in videos{
+            print("Name = \(item.vName)")
+        }
         
+        for (index, item) in videos.enumerate(){
+            print("\(index) Name = \(item.vName)")
+        }
     }
 
 }
