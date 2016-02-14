@@ -8,15 +8,45 @@
 
 import UIKit
 
+var reachability:Reachability?
+var reachabilityStatus = WIFI
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var internetCheck:Reachability?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reachabilityChanged:", name: ReachabilityChangedNotification, object: nil)
+        
+        do{
+            try internetCheck = Reachability.reachabilityForInternetConnection()
+            try internetCheck?.startNotifier()
+            
+        }catch{
+                print("Reachability Error")
+        }
+        
         return true
+    }
+    
+    func reachabilityChanged(notification:NSNotification){
+        reachability = notification.object as? Reachability
+        statusChangedWithReachability(reachability!)
+    }
+    
+    func statusChangedWithReachability(currentReachabilityStatus: Reachability){
+        let networkStatus:Reachability.NetworkStatus = currentReachabilityStatus.currentReachabilityStatus
+        
+        switch networkStatus{
+        case Reachability.NetworkStatus.NotReachable: reachabilityStatus = NOACCESS
+        case Reachability.NetworkStatus.ReachableViaWiFi: reachabilityStatus = WIFI
+        case Reachability.NetworkStatus.ReachableViaWWAN: reachabilityStatus = WWAN
+        }
+        
+        NSNotificationCenter.defaultCenter().postNotificationName("ReachStatusChanged", object: nil)
     }
 
     func applicationWillResignActive(application: UIApplication) {
@@ -38,8 +68,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillTerminate(application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: ReachabilityChangedNotification, object: nil)
     }
+    
+
 
 
 }

@@ -22,6 +22,8 @@ class ViewController: UIViewController {
     
     func didLoadData(videos:[Videos]){
     
+        print(reachabilityStatus)
+        
         for item in videos{
             print("Name = \(item.vName)")
         }
