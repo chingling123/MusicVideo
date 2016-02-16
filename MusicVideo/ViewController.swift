@@ -17,6 +17,8 @@ class ViewController: UIViewController {
 
         NSNotificationCenter.defaultCenter().addObserver(self, selector:"reachabilityStatusChanged", name:"ReachStatusChanged", object: nil)
         
+        reachabilityStatusChanged()
+        
         //Call API
         
         let api = APIManager()
