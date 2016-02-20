@@ -30,7 +30,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func runAPI(){
         let api = APIManager()
-        api.loadData("https://itunes.apple.com/us/rss/topmusicvideos/limit=50/json", completion: didLoadData)
+        api.loadData("https://itunes.apple.com/us/rss/topmusicvideos/limit=200/json", completion: didLoadData)
     }
     
     func didLoadData(videos:[Videos]){
@@ -53,7 +53,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func reachabilityStatusChanged(){
         switch reachabilityStatus{
         case NOACCESS:
-            view.backgroundColor = UIColor.redColor()
+            //view.backgroundColor = UIColor.redColor()
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 let alert = UIAlertController(title: "No Internet Access", message: "Please make sure you are connected to the Internet.", preferredStyle: .Alert)
                 let cancelAction = UIAlertAction(title: "Cancel", style: .Default, handler: { (action) -> Void in
@@ -78,7 +78,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //        case WWAN:view.backgroundColor = UIColor.yellowColor()
 //            displayLabel.text = "Reachable with Cellular"
         default:
-            view.backgroundColor = UIColor.greenColor()
+            //view.backgroundColor = UIColor.greenColor()
             if videos.count > 0{
                 print("do not refresh API")
             }else{
@@ -100,18 +100,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return videos.count
     }
     
+    private struct storyboard{
+        static let cellReuseIdentifier = "cell"
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier(storyboard.cellReuseIdentifier, forIndexPath: indexPath) as! MusicVideoTableViewCell
         
-        let video = videos[indexPath.row]
-        
-        cell.textLabel?.text = ("\(indexPath.row + 1)")
-        cell.detailTextLabel?.text = video.vName
+        cell.video = videos[indexPath.row]
         
         return cell
     }
-
-    
 
 }
 
