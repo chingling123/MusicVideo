@@ -22,10 +22,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         reachabilityStatusChanged()
         
-        //Call API
-        
-        
-       
     }
     
     func runAPI(){
@@ -53,7 +49,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func reachabilityStatusChanged(){
         switch reachabilityStatus{
         case NOACCESS:
-            //view.backgroundColor = UIColor.redColor()
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 let alert = UIAlertController(title: "No Internet Access", message: "Please make sure you are connected to the Internet.", preferredStyle: .Alert)
                 let cancelAction = UIAlertAction(title: "Cancel", style: .Default, handler: { (action) -> Void in
@@ -71,14 +66,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 
                 self.presentViewController(alert, animated: true, completion: nil);
             })
-
-            //displayLabel.text = "No Internet"
-//        case WIFI:view.backgroundColor = UIColor.greenColor()
-//            displayLabel.text = "Reachable with WIFI"
-//        case WWAN:view.backgroundColor = UIColor.yellowColor()
-//            displayLabel.text = "Reachable with Cellular"
         default:
-            //view.backgroundColor = UIColor.greenColor()
             if videos.count > 0{
                 print("do not refresh API")
             }else{
