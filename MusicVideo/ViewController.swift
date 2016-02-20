@@ -20,8 +20,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
         NSNotificationCenter.defaultCenter().addObserver(self, selector:"reachabilityStatusChanged", name:"ReachStatusChanged", object: nil)
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:"preferredFontChange", name:UIContentSizeCategoryDidChangeNotification, object: nil)
+        
         reachabilityStatusChanged()
         
+    }
+    
+    func preferredFontChange(){
+        print("The preferred Font has changed")
     }
     
     func runAPI(){
@@ -77,6 +83,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     deinit{
         NSNotificationCenter.defaultCenter().removeObserver(self, name: "ReachStatusChanged", object: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIContentSizeCategoryDidChangeNotification, object: nil)
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
