@@ -33,6 +33,22 @@ class MusicVideoDetailViewController: UIViewController {
             videoImage.image = UIImage(named: "imageNotAvailable")
         }
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:"preferredFontChange", name:UIContentSizeCategoryDidChangeNotification, object: nil)
+        
+
+    }
+    
+    func preferredFontChange(){
+        print("The preferred Font has changed")
+        
+        vName.font = UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
+        vPrice.font = UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
+        vRights.font = UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
+        vGenre.font = UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
+    }
+    
+    deinit{
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIContentSizeCategoryDidChangeNotification, object: nil)
     }
 
 }
