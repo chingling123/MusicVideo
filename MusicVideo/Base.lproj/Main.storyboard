@@ -69,7 +69,7 @@
                                             <outlet property="musicImage" destination="OL4-yd-0V1" id="fWi-mK-zkb"/>
                                             <outlet property="musicTitle" destination="dd0-hY-zWu" id="LJU-l2-GKT"/>
                                             <outlet property="rank" destination="YII-zG-11R" id="mx4-p2-nfC"/>
-                                            <segue destination="3fP-56-wmY" kind="show" id="LuG-TU-RQ6"/>
+                                            <segue destination="3fP-56-wmY" kind="show" identifier="musicDetail" id="LuG-TU-RQ6"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -129,7 +129,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1OO-Hn-0BY">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1OO-Hn-0BY">
                                 <rect key="frame" x="504" y="416" width="76" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="76" id="ewJ-mg-ivN"/>
@@ -177,6 +177,13 @@
                             <color key="tintColor" red="0.80000000000000004" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                     </toolbarItems>
+                    <connections>
+                        <outlet property="vGenre" destination="xHD-k4-cVg" id="2ed-qf-FEg"/>
+                        <outlet property="vName" destination="UA1-Pd-iyK" id="Yk4-Cd-gAS"/>
+                        <outlet property="vPrice" destination="1OO-Hn-0BY" id="6gv-PA-dM9"/>
+                        <outlet property="vRights" destination="2Db-ul-GaR" id="6VI-Sc-64D"/>
+                        <outlet property="videoImage" destination="23M-Yy-eZW" id="OqF-GF-fQr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qh9-9l-h6L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

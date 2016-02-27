@@ -97,6 +97,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     private struct storyboard{
         static let cellReuseIdentifier = "cell"
+        static let segueIdentifier = "musicDetail"
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -105,6 +106,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.video = videos[indexPath.row]
         
         return cell
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == storyboard.segueIdentifier{
+            if let indexpath = tableView.indexPathForSelectedRow{
+                let video = videos[indexpath.row]
+                
+                let dvc = segue.destinationViewController as! MusicVideoDetailViewController
+                dvc.videos = video
+            }
+        }
     }
 
 }
