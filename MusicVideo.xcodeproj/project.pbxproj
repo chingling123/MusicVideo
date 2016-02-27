@@ -17,6 +17,7 @@
 		759081CD1C71111000EACEF1 /* MusicVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759081CC1C71111000EACEF1 /* MusicVideo.swift */; };
 		759081CF1C7127B800EACEF1 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759081CE1C7127B800EACEF1 /* Reachability.swift */; };
 		75AEB98A1C78F2BF004B2DC2 /* MusicVideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AEB9891C78F2BF004B2DC2 /* MusicVideoTableViewCell.swift */; };
+		75CA34DA1C8220600071F060 /* MusicVideoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CA34D91C8220600071F060 /* MusicVideoDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		759081CC1C71111000EACEF1 /* MusicVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicVideo.swift; sourceTree = "<group>"; };
 		759081CE1C7127B800EACEF1 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		75AEB9891C78F2BF004B2DC2 /* MusicVideoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicVideoTableViewCell.swift; sourceTree = "<group>"; };
+		75CA34D91C8220600071F060 /* MusicVideoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicVideoDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				759081B31C70F07900EACEF1 /* ViewController.swift */,
-				75AEB9891C78F2BF004B2DC2 /* MusicVideoTableViewCell.swift */,
+				75CA34D91C8220600071F060 /* MusicVideoDetailViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -94,6 +96,7 @@
 		759081C51C70F2A300EACEF1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				75AEB9891C78F2BF004B2DC2 /* MusicVideoTableViewCell.swift */,
 				759081B51C70F07900EACEF1 /* Main.storyboard */,
 				759081BA1C70F07900EACEF1 /* LaunchScreen.storyboard */,
 			);
@@ -191,6 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				759081C81C70F67D00EACEF1 /* APIManager.swift in Sources */,
+				75CA34DA1C8220600071F060 /* MusicVideoDetailViewController.swift in Sources */,
 				759081B41C70F07900EACEF1 /* ViewController.swift in Sources */,
 				759081CF1C7127B800EACEF1 /* Reachability.swift in Sources */,
 				759081CD1C71111000EACEF1 /* MusicVideo.swift in Sources */,
